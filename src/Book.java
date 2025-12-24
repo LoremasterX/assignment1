@@ -1,7 +1,5 @@
 import java.time.Year;
-
 public class Book {
-
     private int id;
     private static int idGen = 1;
 
@@ -11,18 +9,16 @@ public class Book {
     private boolean available;
     public Book() {
         this.id = idGen++;
-        this.available = true;
-    }
+        this.available = true; }
     public Book(String title, String author, int year) {
         this();
         setTitle(title);
         setAuthor(author);
         setYear(year);
-    }
+ }
     public int getId() {
         return id;
     }
-
     public String getTitle() {
         return title;
     }
@@ -39,7 +35,7 @@ public class Book {
     public void setTitle(String title) {
         if (title == null || title.trim().isEmpty()) {
             throw new IllegalArgumentException("Title cannot be empty");
-        }
+ }
         this.title = title;
     }
 
@@ -49,7 +45,6 @@ public class Book {
         }
         this.author = author;
     }
-
     public void setYear(int year) {
         int currentYear = Year.now().getValue();
         if (year < 1500 || year > currentYear) {
@@ -57,7 +52,6 @@ public class Book {
         }
         this.year = year;
     }
-
     public void markAsBorrowed() {
         available = false;
     }
@@ -65,7 +59,6 @@ public class Book {
     public void markAsReturned() {
         available = true;
     }
-
     @Override
     public String toString() {
         return "Book{id=" + id +
@@ -73,5 +66,4 @@ public class Book {
                 ", author='" + author + '\'' +
                 ", year=" + year +
                 ", available=" + available + "}";
-    }
-}
+    }}
